@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- Search bar -->
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Search"
+        android:inputType="text"
+        android:padding="9dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:background="@drawable/square2"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_toStartOf="@id/logoutButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+
+    <ImageView
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_dot"/>
+    <!-- Currently Reading Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currently Reading"
+        android:textColor="@color/warm_orange"
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:layout_marginTop="90dp"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="99dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+
+            <!-- Book 1 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+
+        </LinearLayout>
+
+            <!-- Book 2 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+
+            <!-- Add more book views as needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Want To Read"
+        android:textColor="@color/warm_orange"
+        android:textSize="18sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="269dp"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="279dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+
+            <!-- Book 1 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView01"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/engineer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+
+            </LinearLayout>
+
+            <!-- Book 2 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView02"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView03"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/mech"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView04"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bookImageView05"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+
+            <!-- Add more book views as needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previously Read"
+        android:textColor="@color/warm_orange"
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:layout_marginTop="465dp"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="479dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+
+            <!-- Book 1 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bottombook"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+
+            </LinearLayout>
+
+            <!-- Book 2 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bottombook01"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/engineer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bottombook02"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bottombook03"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp">
+
+                <!-- Book Image (with Placeholder) -->
+                <ImageView
+                    android:id="@+id/bottombook04"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/computer"/> <!-- Placeholder image -->
+
+                <!-- Book Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book 1"
+                    android:textStyle="bold"/>
+
+                <!-- Book Author -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author 1"/>
+            </LinearLayout>
+
+            <!-- Add more book views as needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle_top"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_books" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Books"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_more" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

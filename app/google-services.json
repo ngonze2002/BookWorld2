@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "590000248058",
+    "project_id": "bookworld-2d662",
+    "storage_bucket": "bookworld-2d662.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590000248058:android:87d0a7f4b5ac3f42ce6543",
+        "android_client_info": {
+          "package_name": "com.example.bookworld"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2pFjK9xpn9EkzKMzZmyiFOunXXIbYW4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
