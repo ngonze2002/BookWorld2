@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BookWorld"
         tools:targetApi="31">
         <activity
+            android:name=".fantasy"
+            android:exported="false" />
+        <activity
             android:name=".search_discovery"
             android:exported="false" />
         <activity
