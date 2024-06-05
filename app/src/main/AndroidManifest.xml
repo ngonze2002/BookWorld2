@@ -13,6 +13,27 @@
         android:theme="@style/Theme.BookWorld"
         tools:targetApi="31">
         <activity
+            android:name=".MyBooks"
+            android:exported="false" />
+        <activity
+            android:name=".Art"
+            android:exported="false" />
+        <activity
+            android:name=".HealthSciences"
+            android:exported="false" />
+        <activity
+            android:name=".comics"
+            android:exported="false" />
+        <activity
+            android:name=".comis"
+            android:exported="false" />
+        <activity
+            android:name=".Technology"
+            android:exported="false" />
+        <activity
+            android:name=".animation"
+            android:exported="false" />
+        <activity
             android:name=".fantasy"
             android:exported="false" />
         <activity
