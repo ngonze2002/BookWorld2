@@ -1,295 +1,499 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/SearchEditText"
+    <!-- Top layout with backButton, title, and logoutButton -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/square2"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="8dp"
-        android:hint="@string/search"
-        android:inputType="text"
-        android:padding="9dp"
-        android:paddingStart="10dp"
-        android:paddingTop="9dp"
-        android:paddingEnd="56dp"
-        android:paddingBottom="8dp" />
+        android:layout_height="70dp"
+        android:id="@+id/top"
+        android:background="@drawable/cardview_background">
 
-    <TextView
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="18dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:contentDescription="TODO" />
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/Search"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/square2"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="11dp"
+            android:layout_marginStart="33dp"
+            android:layout_toStartOf="@id/logoutButton"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+
+        <ImageView
+            android:id="@+id/logoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_dot" />
+
+    </RelativeLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/explore_by_genre"
-        android:gravity="center"
-        android:textStyle="bold"
-        />
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:layout_marginTop="10dp">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:text="See new releases, most-read books,quotes, lists and more in these
-popular genres."
-        android:textSize="17sp"
-
-        />
-
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Trending Books"
-        android:textSize="18sp"
-        android:textColor="@color/warm_orange"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"/>
-
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/bk1"
-                />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/bk1"
-                />
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/bk1"
-                />
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/bk1"
-                />
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/bk1"
-                />
+            <!-- Text view for Explore by Genre -->
+            <TextView
+                android:id="@+id/explore_by_genre_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/explore_by_genre"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="9dp"
+                android:alpha="0.7"
+                android:background="@color/black" />
+
+            <!-- HorizontalScrollView for trending books -->
+            <TextView
+                android:id="@+id/trending_books_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="@string/trending_books"
+                android:textColor="@color/warm_orange"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/image_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/bk1" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/bk1" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/bk1" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/bk1" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/bk1" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Genre List -->
+            <LinearLayout
+                android:id="@+id/genre_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp">
+
+                <!-- Art Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Art"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Technology Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Technology"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Business Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Business"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Animation Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Animation"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Health Sciences Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Health Sciences"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Comics Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Comics"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Fantasy Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fantasy"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Literature Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Literature"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Music Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Music"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Romance Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Romance"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- History Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="History"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+                <!-- Fiction Genre -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fiction"
+                        android:textSize="20sp"
+                        android:layout_marginStart="1dp"
+                        android:drawableRight="@drawable/ic_right_arrow_foreground" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC" />
+
+            </LinearLayout>
 
         </LinearLayout>
-    </HorizontalScrollView>
+
+    </ScrollView>
     <LinearLayout
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="15dp">
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle_top"
+        android:padding="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Art"
-            android:textSize="20sp"
-            android:layout_marginStart="1dp"
-            android:drawableRight="@drawable/ic_right_arrow_foreground"
-            />
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_books" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Books"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_more" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Technology"
-            android:textSize="20sp"
-            android:layout_marginStart="1dp"
-            android:drawableRight="@drawable/ic_right_arrow_foreground"
-            />
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Business"
-            android:textSize="20sp"
-            android:layout_marginStart="1dp"
-            android:drawableRight="@drawable/ic_right_arrow_foreground"
-            />
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Animation"
-            android:textSize="20sp"
-            android:layout_marginStart="1dp"
-            android:drawableRight="@drawable/ic_right_arrow_foreground"
-            />
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Health Sciences"
-            android:textSize="20sp"
-            android:layout_marginStart="1dp"
-            android:drawableRight="@drawable/ic_right_arrow_foreground"
-            />
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Comics"
-            android:textSize="20sp"
-            android:layout_marginStart="1dp"
-            android:drawableRight="@drawable/ic_right_arrow_foreground"
-            />
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fantasy"
-            android:textSize="20sp"
-            android:layout_marginStart="1dp"
-            android:drawableRight="@drawable/ic_right_arrow_foreground"
-            />
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#CCCCCC" />
-
-
-
-
-
-
-
-</LinearLayout>
+</RelativeLayout>

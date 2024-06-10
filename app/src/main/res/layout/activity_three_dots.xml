@@ -26,7 +26,7 @@
             android:inputType="text"
             android:padding="12dp"
             android:background="@drawable/square2"
-            android:drawableLeft="@drawable/ic_search"
+            android:drawableStart="@drawable/ic_search"
             android:drawablePadding="11dp"
             android:layout_marginStart="33dp"
             android:layout_toStartOf="@id/logoutButton"
