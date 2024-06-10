@@ -1,3 +1,4 @@
+package com.example.bookworld;
 import android.os.Bundle;
 import android.widget.EditText;
 import androidx.annotation.NonNull;
@@ -10,7 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class AccountSettingsActivity extends AppCompatActivity {
+public class account_settings extends AppCompatActivity {
     private EditText etCurrentEmail;
     private EditText etFullName;
     private EditText etUsername;
@@ -30,7 +31,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.et_username);
         etCurrentPassword = findViewById(R.id.et_current_password);
         etNewPassword = findViewById(R.id.et_new_password);
-        etConfirmPassword = findViewById(R.id.et_confirm_password);
+        etConfirmPassword = findViewById(R.id.confirm_password);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();

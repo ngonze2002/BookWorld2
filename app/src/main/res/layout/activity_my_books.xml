@@ -1,55 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFDF6">
+    android:layout_height="match_parent">
 
+    <!-- Top Container -->
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/cardview_background">
 
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="18dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:contentDescription="TODO" />
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Search"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/square2"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="11dp"
+            android:layout_marginStart="33dp"
+            android:layout_toStartOf="@id/logoutButton"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+        <ImageView
+            android:id="@+id/logoutButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_dot" />
+
+    </RelativeLayout>
+
+    <!-- Below Top Container -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFDF6"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_below="@id/top"
+        android:background="#FFFDF6"
         android:padding="16dp">
-
-        <!-- Search bar and logout button container -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
-
-            <EditText
-                android:id="@+id/SearchEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:layout_toStartOf="@+id/logoutButton"
-                android:background="@drawable/square2"
-                android:drawableLeft="@drawable/ic_search"
-                android:drawablePadding="8dp"
-                android:hint="Search"
-                android:inputType="text"
-                android:padding="9dp"
-                android:paddingStart="10dp"
-                android:paddingTop="9dp"
-                android:paddingEnd="56dp"
-                android:paddingBottom="8dp" />
-
-            <ImageView
-                android:id="@+id/logoutButton"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/baseline_account_circle_24" />
-        </RelativeLayout>
 
         <!-- Currently Reading Section -->
         <TextView
@@ -63,57 +68,45 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
+                <!-- Add ImageView items for Currently Reading section -->
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/engineer" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
 
             </LinearLayout>
         </HorizontalScrollView>
-
-
-
 
         <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginVertical="16dp"
-            android:background="#CCCCCC" />
+            android:background="@color/black" />
 
         <!-- Want to Read Section -->
         <TextView
@@ -127,55 +120,49 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
+                <!-- Add ImageView items for Want to Read section -->
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
-                />
+                    android:src="@drawable/bk1" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/mech" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
 
             </LinearLayout>
         </HorizontalScrollView>
-
-
 
         <!-- Divider -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginTop="3dp"
             android:layout_marginVertical="16dp"
             android:background="#CCCCCC" />
 
@@ -191,189 +178,130 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                android:orientation="horizontal">
 
+                <!-- Add ImageView items for Previously Read section -->
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/engineer" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/engineer" />
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/bk1"
-                    />
+                    android:src="@drawable/bk1" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/bk1" />
 
             </LinearLayout>
         </HorizontalScrollView>
-
-
-
-        <!-- Divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginVertical="16dp"
-            android:background="#CCCCCC" />
-
-        <!-- Add Book Button -->
-        <Button
-            android:id="@+id/addBookbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="32dp"
-            android:background="#FF9800"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp"
-            android:text="Add a Book"
-            android:textColor="#FFFFFF" />
-
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/searchEditText"
-        android:layout_width="0dp"
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/logoutButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginEnd="8dp"
-        android:hint="Search"
-        android:inputType="text"
-        android:padding="9dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="56dp"
-        android:paddingTop="9dp"
-        android:layout_marginStart="9dp"
-        android:paddingBottom="8dp"
-        android:background="@drawable/square2"
-        android:drawableLeft="@drawable/ic_search"
-        android:drawablePadding="8dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="16dp"/>
-    <ImageView
-        android:id="@+id/logoutbutton"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/baseline_account_circle_24"
-        android:layout_marginEnd="16dp"/>
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle_top"
+        android:padding="10dp">
 
-    <!-- Currently Reading Section -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Currently Reading"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"
-        android:textColor="#333333"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/currentlyReadingRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#FFF3E0"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
 
-    <!-- Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#CCCCCC"
-        android:layout_marginVertical="16dp"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <!-- Want to Read Section -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Want to Read"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"
-        android:textColor="#333333"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_books" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Books"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/wantToReadRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#E0F7FA"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <!-- Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#CCCCCC"
-        android:layout_marginVertical="16dp"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
 
-    <!-- Previously Read Section -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Previously Read"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"
-        android:textColor="#333333"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/previouslyReadRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#E0E0E0"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_more" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
 
-    <!-- Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#CCCCCC"
-        android:layout_marginVertical="16dp"/>
 
-    <!-- Add Book Button -->
-    <Button
-        android:id="@+id/addBookButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add a Book"
-        android:layout_gravity="center"
-        android:background="#FF9800"
-        android:textColor="#FFFFFF"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"/>
-
-</LinearLayout>
