@@ -1,6 +1,11 @@
 package com.example.bookworld;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -11,7 +16,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class account_settings extends AppCompatActivity {
+public class Account_Settings extends AppCompatActivity {
+    private ImageView backButton;
+    private ImageView threeDotsButton;
     private EditText etCurrentEmail;
     private EditText etFullName;
     private EditText etUsername;
@@ -26,6 +33,12 @@ public class account_settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_settings);
 
+        backButton = findViewById(R.id.backButton);
+        LinearLayout homeLayout = findViewById(R.id.homelayout1);
+        LinearLayout myBooksLayout = findViewById(R.id.mybookslayout1);
+        LinearLayout searchLayout = findViewById(R.id.searchbutton1);
+        LinearLayout moreLayout = findViewById(R.id.morelayout1);
+        threeDotsButton = findViewById(R.id.logoutButton);
         etCurrentEmail = findViewById(R.id.et_current_email);
         etFullName = findViewById(R.id.et_full_name);
         etUsername = findViewById(R.id.et_username);
@@ -35,6 +48,55 @@ public class account_settings extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the "three dots" activity
+                Intent intent = new Intent(Account_Settings.this, three_dots.class);
+                startActivity(intent);
+            }
+        });
+        homeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Account_Settings.this, Home.class);
+                startActivity(intent);
+            }
+        });
+
+        myBooksLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Account_Settings.this, MyBooks.class);
+                startActivity(intent);
+            }
+        });
+
+        searchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Account_Settings.this, search_discovery.class);
+                startActivity(intent);
+            }
+        });
+
+        moreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Account_Settings.this, More.class);
+                startActivity(intent);
+            }
+        });
+
+        threeDotsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the "three dots" activity
+                Intent intent = new Intent(Account_Settings.this,three_dots.class);
+                startActivity(intent);
+            }
+        });
 
         loadUserInfo();
     }

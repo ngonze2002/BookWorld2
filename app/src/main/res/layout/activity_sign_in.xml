@@ -9,17 +9,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FIND BOOKS ONLNE"
+        android:text="@string/find_books_online"
         android:gravity="center"
         android:textColor="@color/amber"
         android:textSize="36sp"
         android:layout_marginTop="9dp"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_library_books_24"
-        android:layout_marginTop="49dp"
-        />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -31,16 +25,11 @@
         android:elevation="34dp"
         app:cardCornerRadius="40dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-        </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:text="Create Account"
+            android:text="@string/create_account"
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="@color/warm_orange"/>
@@ -71,7 +60,7 @@
                     android:alpha="0.6"
                     android:drawableStart="@drawable/email"
                    android:inputType="textWebEmailAddress"
-                    android:hint="Input Email"/>
+                    android:hint="@string/input_email"/>
 
             </LinearLayout>
             <LinearLayout
@@ -89,12 +78,35 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:alpha="0.6"
-                    android:padding="11dp"
+                    android:padding="14dp"
                     android:background="@drawable/cardview"
                     android:elevation="14dp"
                     android:drawableStart="@drawable/baseline_person_24"
                     android:inputType="textWebEmailAddress"
-                    android:hint="Username"/>
+                    android:hint="@string/username"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="13dp"
+                >
+
+                <EditText
+                    android:id="@+id/Contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:alpha="0.6"
+                    android:padding="14dp"
+                    android:background="@drawable/cardview"
+                    android:elevation="14dp"
+                    android:drawableStart="@drawable/baseline_add_call_24"
+                    android:inputType="textWebEmailAddress"
+                    android:hint="@string/phone_contact"/>
 
             </LinearLayout>
             <LinearLayout
@@ -112,11 +124,11 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:alpha="0.6"
-                    android:padding="11dp"
+                    android:padding="14dp"
                     android:background="@drawable/cardview"
                     android:drawableStart="@drawable/lock"
                     android:inputType="textPassword"
-                    android:hint="Enter Password"/>
+                    android:hint="@string/enter_password"/>
 
 
             </LinearLayout>
@@ -135,138 +147,24 @@
                     android:alpha="0.6"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:padding="11dp"
+                    android:padding="14dp"
                     android:background="@drawable/cardview"
                     android:drawableStart="@drawable/lock"
                     android:inputType="textPassword"
-                    android:hint="Confirm Password"/>
+                    android:hint="@string/confirm_password"/>
 
 
             </LinearLayout>
-
-
 
             <Button
                 android:id="@+id/buttonLogin"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_gravity="center"
                 android:textSize="29sp"
                 android:textColor="@color/material_50"
-                android:text="Sign Up"/>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#CCCCCC"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Or Sign Up With"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#CCCCCC"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:orientation="horizontal">
-
-                <!-- Google Layout -->
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rectangle_google"
-                    android:padding="9dp">
-
-                    <!-- Google Icon -->
-                    <ImageView
-                        android:id="@+id/google_icon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/google"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginEnd="7dp"/>
-
-                    <!-- Google Text -->
-                    <TextView
-                        android:id="@+id/google_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/google_icon"
-                        android:layout_centerVertical="true"
-                        android:text="Google"
-                        android:textStyle="bold"
-                        android:textColor="@color/warm_orange"
-                        android:textSize="19sp"
-                        android:layout_marginEnd="19dp"/>
-
-                </RelativeLayout>
-
-                <!-- Facebook Layout -->
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rectangle"
-                    android:padding="9dp">
-
-                    <!-- Facebook Icon -->
-                    <ImageView
-                        android:id="@+id/facebook_icon"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="4dp"
-                        android:src="@drawable/fb"
-                        android:layout_marginEnd="8dp"/>
-
-                    <!-- Facebook Text -->
-                    <TextView
-                        android:id="@+id/facebook_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/facebook_icon"
-                        android:layout_centerVertical="true"
-                        android:text="Facebook"
-                        android:textStyle="bold"
-                        android:textColor="@color/warm_orange"
-                        android:textSize="15sp"
-                        android:layout_marginEnd="20dp"/>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-
-
+                android:text="@string/sign_up"/>
 
 
             <RelativeLayout
@@ -283,7 +181,7 @@
                     android:gravity="center"
                     android:textSize="16sp"
                     android:padding="11dp"
-                    android:text="Have An Account?"/>
+                    android:text="@string/have_an_account"/>
                 <TextView
                     android:id="@+id/CreateAccount"
                     android:layout_width="match_parent"
@@ -293,13 +191,11 @@
                     android:gravity="center"
                     android:textSize="22sp"
                     android:layout_marginTop="18dp"
-                    android:text="Log In"
+                    android:text="@string/log_in"
                     android:padding="11dp"
                     />
 
             </RelativeLayout>
-
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

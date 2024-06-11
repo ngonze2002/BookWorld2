@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/login"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/blue_back">
@@ -9,17 +10,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FIND BOOKS ONLNE"
+        android:text="@string/find_books_onlne"
         android:gravity="center"
         android:textColor="@color/amber"
         android:textSize="36sp"
-        android:layout_marginTop="9dp"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/account_icon"
-        android:layout_marginTop="46dp"
-        />
+        android:layout_marginTop="19dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -75,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="20dp">
 
                 <EditText
                     android:id="@+id/TextPassword"
@@ -139,116 +134,7 @@
                 android:textColor="@color/material_50"
                 android:text="Login"/>
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#CCCCCC"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/or_log_in_with"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#CCCCCC"/>
-
             </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <!-- Google Layout -->
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rectangle_google"
-                    android:padding="9dp">
-
-                    <!-- Google Icon -->
-                    <ImageView
-                        android:id="@+id/google_icon"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/google"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginEnd="7dp"/>
-
-                    <!-- Google Text -->
-                    <TextView
-                        android:id="@+id/google_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/google_icon"
-                        android:layout_centerVertical="true"
-                        android:text="Google"
-                        android:textStyle="bold"
-                        android:textColor="@color/warm_orange"
-                        android:textSize="19sp"
-                        android:layout_marginEnd="19dp"/>
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rectangle"
-                    android:padding="9dp">
-
-                    <!-- Facebook Icon -->
-                    <ImageView
-                        android:id="@+id/facebook_icon"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="4dp"
-                        android:src="@drawable/fb"
-                        android:layout_marginEnd="8dp"/>
-
-                    <!-- Facebook Text -->
-                    <TextView
-                        android:id="@+id/facebook_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/facebook_icon"
-                        android:layout_centerVertical="true"
-                        android:text="Facebook"
-                        android:textStyle="bold"
-                        android:textColor="@color/warm_orange"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="15dp"/>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
     <RelativeLayout
@@ -280,7 +166,6 @@
             android:padding="11dp"
             />
 
-
     </RelativeLayout>
-
 </RelativeLayout>
+

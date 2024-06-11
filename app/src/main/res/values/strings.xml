@@ -1,5 +1,4 @@
 <resources>
-    <string name="create_account" translatable="false">Create Account</string>
     <string name="welcome_back" translatable="false">Welcome Back</string>
     <string name="don_t_have_an_account" translatable="false">Don\'t Have An Account?</string>
     <string name="todo">TODO</string>
@@ -59,5 +58,18 @@
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="Search">Search</string>
     <string name="trending_books">Trending Books</string>
+    <string name="find_books_onlne">FIND BOOKS ONLNE</string>
+    <string name="find_books_online">FIND BOOKS ONLINE</string>
+    <string name="to_do">TODO</string>
+    <string name="create_account">Create Account</string>
+    <string name="input_email">Input Email</string>
+    <string name="username">Username</string>
+    <string name="phone_contact">Phone Contact</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="have_an_account">Have An Account?</string>
+    <string name="log_in">Log In</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="account_settings">Account Settings</string>
 
 </resources>

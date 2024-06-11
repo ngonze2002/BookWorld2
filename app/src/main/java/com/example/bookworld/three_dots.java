@@ -1,24 +1,69 @@
 package com.example.bookworld;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class three_dots extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_three_dots);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        LinearLayout accountLayout = findViewById(R.id.accountLayout);
+        LinearLayout notificationsLayout = findViewById(R.id.NotificationsLayout);
+        LinearLayout logoutLayout = findViewById(R.id.LogoutLayout);
+        LinearLayout deleteLayout = findViewById(R.id.DeleteLayout);
+
+        ImageView backButton = findViewById(R.id.backButton);
+        ImageView logoutButton = findViewById(R.id.logoutButton);
+
+        accountLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(three_dots.this, Account_Settings.class);
+                startActivity(intent);
+            }
         });
+
+        notificationsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(three_dots.this, Notifications.class);
+                startActivity(intent);
+            }
+        });
+
+        logoutLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle logout logic here
+                // For now, just navigating to the login screen
+                Intent intent = new Intent(three_dots.this, login.class);
+                startActivity(intent);
+            }
+        });
+
+        deleteLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(three_dots.this, sign_in.class);
+                startActivity(intent);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(three_dots.this, Home.class);
+                startActivity(intent);
+                finish(); // Finish the current activity
+            }
+        });
+
     }
 }

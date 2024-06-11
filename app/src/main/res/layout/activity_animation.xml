@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottomNavigation"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -203,7 +203,7 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/view_all_button1"
+                        android:id="@+id/view_all_button01"
                         android:layout_width="400dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -270,7 +270,7 @@
                         android:layout_marginTop="10dp">
 
                         <LinearLayout
-                            android:id="@+id/row_2"
+                            android:id="@+id/animation1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -307,7 +307,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/remaining_rows_2"
+                            android:id="@+id/animation_rows"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -426,7 +426,7 @@
                         android:layout_marginTop="10dp">
 
                         <LinearLayout
-                            android:id="@+id/row_2"
+                            android:id="@+id/animation2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -463,7 +463,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/remaining_rows_2"
+                            android:id="@+id/animation_rows_2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -511,7 +511,7 @@
                         </LinearLayout>
 
                         <Button
-                            android:id="@+id/view_all_button2"
+                            android:id="@+id/view_all_button1"
                             android:layout_width="400dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"

@@ -20,10 +20,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="23sp"
             android:layout_marginStart="39dp"
-            android:layout_marginTop="18dp"/>
+            android:layout_marginTop="18dp"
+            android:text="@string/account_settings"
+            android:textSize="23sp" />
+
         <ImageView
             android:id="@+id/logoutButton"
             android:layout_width="wrap_content"
@@ -272,6 +273,7 @@
         android:padding="10dp">
 
     <LinearLayout
+        android:id="@+id/homelayout1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -292,6 +294,7 @@
 
     <LinearLayout
         android:layout_width="0dp"
+        android:id="@+id/mybookslayout1"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
@@ -310,6 +313,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/searchbutton1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -329,6 +333,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/morelayout1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
