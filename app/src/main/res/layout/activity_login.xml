@@ -16,33 +16,25 @@
         android:textSize="36sp"
         android:layout_marginTop="19dp"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="199dp"
-        app:cardCornerRadius="40dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </RelativeLayout>
-        <TextView
+
+            <TextView
+                android:id="@+id/welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:text="@string/welcome_back"
             android:gravity="center"
             android:textStyle="bold"
+                android:layout_marginTop="153dp"
             android:textColor="@color/warm_orange"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome"
             android:orientation="vertical"
-            android:padding="38dp">
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,13 +49,13 @@
                     android:layout_marginStart="1dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:padding="12dp"
+                    android:padding="11dp"
                     android:background="@drawable/cardview"
                     android:elevation="14dp"
+                    android:alpha="0.6"
                     android:drawableStart="@drawable/email"
                     android:inputType="textEmailAddress"
-                    android:drawablePadding="8dp"
-                    android:hint="Input Email"/>
+                    android:hint="@string/input_email"/>
 
             </LinearLayout>
             <LinearLayout
@@ -73,31 +65,32 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/TextPassword"
+                    android:id="@+id/Password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="1dp"
                     android:textColor="@color/black"
-                    android:padding="12dp"
                     android:textStyle="bold"
+                    android:alpha="0.6"
+                    android:padding="14dp"
                     android:background="@drawable/cardview"
                     android:drawableStart="@drawable/lock"
                     android:inputType="textPassword"
-                    android:hint="Enter Password"
-                    android:drawablePadding="8dp"/>
+                    android:hint="@string/enter_password"/>
 
             </LinearLayout>
             <CheckBox
                 android:id="@+id/checkBoxShowPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Show Password"
-                android:textColor="@color/warm_orange"
+                android:textColor="@color/amber"
                 android:textSize="12sp"
                 android:inputType="textVisiblePassword"
-                android:layout_below="@id/TextPassword"
-                android:layout_marginTop="1dp"
-                android:alpha="0.7"/>
+                android:layout_below="@id/Password"
+                android:layout_marginTop="1dp" />
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -109,10 +102,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Remember Me"
-                    android:textColor="@color/warm_orange"
+                    android:textStyle="bold"
+                    android:textColor="@color/amber"
                     android:textSize="15sp"
-                    android:layout_centerVertical="true"
-                    android:alpha="0.7"/>
+                    android:layout_centerVertical="true" />
 
                 <TextView
                     android:id="@+id/ForgotPassword"
@@ -120,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:text="Forgot Password"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@color/warm_orange"
+                    android:textColor="@color/amber"
                     android:layout_centerVertical="true"
                     android:textSize="15sp"/>
             </RelativeLayout>
@@ -131,41 +124,35 @@
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:textSize="29sp"
-                android:textColor="@color/material_50"
+                android:textColor="@color/amber"
                 android:text="Login"/>
+
+            <TextView
+                android:id="@+id/Register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:padding="11dp"
+                android:text="@string/don_t_have_an_account"/>
+            <TextView
+                android:id="@+id/CreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/amber"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:text="Register"
+                android:padding="1dp"
+                />
 
             </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="680dp">
 
-        <TextView
-            android:id="@+id/Register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:padding="11dp"
-            android:text="@string/don_t_have_an_account"/>
-        <TextView
-            android:id="@+id/CreateAccount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/amber"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="17sp"
-            android:layout_marginTop="20dp"
-            android:text="Register"
-            android:padding="11dp"
-            />
 
-    </RelativeLayout>
+
 </RelativeLayout>
 

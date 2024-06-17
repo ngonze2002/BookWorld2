@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/fantasy">
+    android:layout_height="match_parent">
 
     <!-- Top View (Header) -->
     <RelativeLayout
@@ -22,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fantasy"
+            android:text="History"
             android:textSize="28sp"
             android:layout_marginStart="39dp"
             android:layout_marginTop="18dp" />
@@ -271,7 +270,7 @@
                         android:layout_marginTop="10dp">
 
                         <LinearLayout
-                            android:id="@+id/fanstasy_row"
+                            android:id="@+id/row"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -308,7 +307,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/fantasy_remaining"
+                            android:id="@+id/remaining_rows"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -427,7 +426,7 @@
                         android:layout_marginTop="10dp">
 
                         <LinearLayout
-                            android:id="@+id/row_2"
+                            android:id="@+id/row_02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -460,11 +459,11 @@
                                 android:background="@color/dark_green"
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"
-                                android:text="@string/borrow_book" />
+                                android:text="Borrow Book" />
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/remaining_rows_2"
+                            android:id="@+id/remaining_rows_01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -541,7 +540,7 @@
         android:padding="10dp">
 
         <LinearLayout
-            android:id="@+id/homefantasy"
+            android:id="@+id/homehistory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -561,7 +560,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/mybooksfantasy"
+            android:id="@+id/mybookshistory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -581,7 +580,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/searchfantasy"
+            android:id="@+id/searchhistory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -601,7 +600,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/morefantasy"
+            android:id="@+id/morehistory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -615,7 +614,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/More"
+                android:text="More"
                 android:textSize="12sp"
                 android:gravity="center" />
         </LinearLayout>

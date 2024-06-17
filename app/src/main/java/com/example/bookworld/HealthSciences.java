@@ -1,29 +1,87 @@
 package com.example.bookworld;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class HealthSciences extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Enable edge-to-edge
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         setContentView(R.layout.activity_health_sciences);
 
-        // Apply window insets
-        View mainView = findViewById(R.id.main);
-        ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return WindowInsetsCompat.CONSUMED;
+        // Initialize LinearLayouts
+        LinearLayout homeLayout = findViewById(R.id.homeHealth);
+        LinearLayout myBooksLayout = findViewById(R.id.mybooksHealth);
+        LinearLayout searchLayout = findViewById(R.id.searchHealth);
+        LinearLayout moreLayout = findViewById(R.id.moreHealth);
+        ImageView backButton = findViewById(R.id.backButton);
+
+        // Set onClick listeners
+        homeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HealthSciences.this, Home.class);
+                startActivity(intent);
+            }
+        });
+
+        myBooksLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HealthSciences.this, MyBooks.class);
+                startActivity(intent);
+            }
+        });
+
+        searchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HealthSciences.this, search_discovery.class);
+                startActivity(intent);
+            }
+        });
+
+        moreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Inflate the layout for the pop-up window
+                View popupView = getLayoutInflater().inflate(R.layout.activity_more, null);
+
+                // Create a new pop-up window
+                PopupWindow popupWindow = new PopupWindow(popupView,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                // Set background drawable with semi-transparent color to create overlay effect
+                Drawable background = new ColorDrawable(Color.BLACK);
+                background.setAlpha(150); // Set alpha (transparency) level (0-255)
+                popupWindow.setBackgroundDrawable(background);
+
+                // Set focusable and outside touchable to true to allow dismissal of the pop-up window when touched outside
+                popupWindow.setFocusable(true);
+                popupWindow.setOutsideTouchable(true);
+
+                // Show the pop-up window at the center of the screen
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HealthSciences.this, search_discovery.class);
+                startActivity(intent);
+            }
         });
     }
 }

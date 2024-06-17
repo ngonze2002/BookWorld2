@@ -15,10 +15,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class sign_in extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class sign_in extends AppCompatActivity {
     private TextView loginTextView;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class sign_in extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+        dbRef = FirebaseDatabase.getInstance().getReference("users");
 
         emailEditText = findViewById(R.id.Email);
         usernameEditText = findViewById(R.id.Username);
@@ -81,7 +84,7 @@ public class sign_in extends AppCompatActivity {
             usernameEditText.setError("Username is required");
             isValid = false;
         } else if (username.length() < 4 || username.length() > 10) {
-            usernameEditText.setError("Username must be between 5 and 10 characters");
+            usernameEditText.setError("Username must be between 4 and 10 characters");
             isValid = false;
         }
 
@@ -110,7 +113,7 @@ public class sign_in extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign up success, save user details to Firestore
+                            // Sign up success, save user details to Firestore and Realtime Database
                             saveUserDetails(email, username);
                         } else {
                             // If sign up fails, display a message to the user.
@@ -127,6 +130,7 @@ public class sign_in extends AppCompatActivity {
         user.put("email", email);
         user.put("username", username);
 
+        // Save to Firestore
         db.collection("users").document(userId)
                 .set(user)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -134,12 +138,25 @@ public class sign_in extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(sign_in.this, "User details saved.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(sign_in.this, "Failed to save user details to Firestore.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+        // Save to Realtime Database
+        dbRef.child(userId).setValue(user)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(sign_in.this, "User details saved to Realtime Database.", Toast.LENGTH_SHORT).show();
                             // Redirect to home activity after saving user details
-                            Intent intent = new Intent(sign_in.this, Home.class);
+                            Intent intent = new Intent(sign_in.this, login.class);
                             startActivity(intent);
                             finish(); // Optional, to close the sign_in activity
                         } else {
-                            Toast.makeText(sign_in.this, "Failed to save user details.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(sign_in.this, "Failed to save user details to Realtime Database.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

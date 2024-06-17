@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -12,24 +13,24 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Art extends AppCompatActivity {
+public class Business extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_art);
+        setContentView(R.layout.activity_business);
 
-        // Initialize LinearLayouts and ImageViews
-        LinearLayout homeLayout = findViewById(R.id.homeart);
-        LinearLayout myBooksLayout = findViewById(R.id.mybooksart);
-        LinearLayout searchLayout = findViewById(R.id.searchart);
-        LinearLayout moreLayout = findViewById(R.id.moreart);
+        // Initialize LinearLayouts
+        LinearLayout homeLayout = findViewById(R.id.homebusiness);
+        LinearLayout myBooksLayout = findViewById(R.id.mybooksBusiness);
+        LinearLayout searchLayout = findViewById(R.id.searchBusiness);
+        LinearLayout moreLayout = findViewById(R.id.moreBusiness);
         ImageView backButton = findViewById(R.id.backButton);
 
         // Set onClick listeners
         homeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Art.this, Home.class);
+                Intent intent = new Intent(Business.this, Home.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +38,7 @@ public class Art extends AppCompatActivity {
         myBooksLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Art.this, MyBooks.class);
+                Intent intent = new Intent(Business.this, MyBooks.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +46,7 @@ public class Art extends AppCompatActivity {
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Art.this, search_discovery.class);
+                Intent intent = new Intent(Business.this, search_discovery.class);
                 startActivity(intent);
             }
         });
@@ -78,7 +79,7 @@ public class Art extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Art.this, search_discovery.class);
+                Intent intent = new Intent(Business.this, search_discovery.class);
                 startActivity(intent);
             }
         });
