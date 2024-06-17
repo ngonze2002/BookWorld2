@@ -17,10 +17,10 @@ import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
 
-    private List<Book> books;
+    private List<Book> bookList;
 
-    public BookAdapter(List<Book> books) {
-        this.books = books;
+    public BookAdapter(List<Book> bookList) {
+        this.bookList = bookList;
     }
 
     @NonNull
@@ -32,30 +32,24 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
-        Book book = books.get(position);
-        holder.titleTextView.setText(book.getTitle());
-
-        // Load thumbnail image using Picasso from Firebase Storage URL
-        Picasso.get()
-                .load(book.getThumbnailUrl()) // Assuming getThumbnailUrl() returns Firebase Storage URL
-                .placeholder(R.drawable.placeholder_image) // Placeholder image while loading
-                .error(R.drawable.error_image) // Error image if loading fails
-                .into(holder.thumbnailImageView);
+        Book book = bookList.get(position);
+        holder.title.setText(book.getTitle());
+        Picasso.get().load(book.getThumbnailUrl()).into(holder.thumbnail);
     }
 
     @Override
     public int getItemCount() {
-        return books.size();
+        return bookList.size();
     }
 
-    static class BookViewHolder extends RecyclerView.ViewHolder {
-        ImageView thumbnailImageView;
-        TextView titleTextView;
+    class BookViewHolder extends RecyclerView.ViewHolder {
+        ImageView thumbnail;
+        TextView title;
 
-        BookViewHolder(@NonNull View itemView) {
+        public BookViewHolder(@NonNull View itemView) {
             super(itemView);
-            thumbnailImageView = itemView.findViewById(R.id.bookThumbnail);
-            titleTextView = itemView.findViewById(R.id.bookTitle);
+            thumbnail = itemView.findViewById(R.id.bookThumbnail);
+            title = itemView.findViewById(R.id.bookTitle);
         }
     }
 }

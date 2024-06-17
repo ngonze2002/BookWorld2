@@ -61,12 +61,13 @@
         android:text="SEARCH"
         android:layout_marginTop="16dp" />
 
-    <TextView
-        android:id="@+id/tvBookList"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSearchedBooks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Available books will be displayed here" />
+        android:layout_below="@id/trendingBooksTextView"
+        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/btnBorrow"

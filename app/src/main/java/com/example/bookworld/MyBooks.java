@@ -65,8 +65,8 @@ public class MyBooks extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                String thumbnailUrl = document.getString("bookthumbnail");
-                                String title = document.getString("booktitle");
+                                String thumbnailUrl = document.getString("thumbnailUrl");
+                                String title = document.getString("title");
 
                                 // Create a Book object and add it to the list
                                 Book book = new Book(thumbnailUrl, title);
