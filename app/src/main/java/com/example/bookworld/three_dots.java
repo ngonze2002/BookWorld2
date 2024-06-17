@@ -18,9 +18,7 @@ public class three_dots extends AppCompatActivity {
         LinearLayout notificationsLayout = findViewById(R.id.NotificationsLayout);
         LinearLayout logoutLayout = findViewById(R.id.LogoutLayout);
         LinearLayout deleteLayout = findViewById(R.id.DeleteLayout);
-
         ImageView backButton = findViewById(R.id.backButton);
-        ImageView logoutButton = findViewById(R.id.logoutButton);
 
         accountLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,14 +54,13 @@ public class three_dots extends AppCompatActivity {
             }
         });
 
+        // Add onClick listener for back button
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(three_dots.this, Home.class);
                 startActivity(intent);
-                finish(); // Finish the current activity
             }
         });
-
     }
 }

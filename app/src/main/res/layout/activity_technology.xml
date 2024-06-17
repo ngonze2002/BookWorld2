@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottomNavigation"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="65dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="78dp"
+                android:layout_marginTop="38dp"
                 android:background="@color/dark_green"
                 android:text="@string/add_to_favorite_genres"
                 android:gravity="center"
@@ -540,6 +540,7 @@
         android:padding="10dp">
 
         <LinearLayout
+            android:id="@+id/hometech"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -559,6 +560,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/mybookstech"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -578,6 +580,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/searchtech"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -597,6 +600,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/moretech"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

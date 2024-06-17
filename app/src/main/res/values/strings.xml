@@ -2,7 +2,6 @@
     <string name="welcome_back" translatable="false">Welcome Back</string>
     <string name="don_t_have_an_account" translatable="false">Don\'t Have An Account?</string>
     <string name="todo">TODO</string>
-    <string name="or_log_in_with" translatable="false">Or Log in With</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -24,7 +23,7 @@
     <string name="popular">POPULAR</string>
     <string name="book_listing1">book listing</string>
     <string name="book_listing2">book_listing2\n</string>
-    <string name="boook_listing3">boook_listing3</string>
+    <string name="book_listing3">book_listing3</string>
     <string name="want_to_read7">Want to Read</string>
     <string name="want_to_read8">Want to Read</string>
     <string name="want_to_read9">Want to Read</string>
@@ -46,21 +45,12 @@
     <string name="book_listing7">book_listing7</string>
     <string name="book_listing8">book_listing8</string>
     <string name="book_listing9">book_listing9</string>
-    <string name="fantasy">Fantasy</string>
     <string name="explore_by_genre">EXPLORE BY GENRE</string>
-    <string name="health_sciences">Health Sciences</string>
-    <string name="business">Business</string>
-    <string name="comics">Comics</string>
-    <string name="animation">Animation</string>
-    <string name="search">Search</string>
-    <string name="genres_fiction"><![CDATA[Genres > Fiction]]></string>
     <string name="genres_sequential_art"><![CDATA[Genres > Sequential Art]]></string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="Search">Search</string>
     <string name="trending_books">Trending Books</string>
-    <string name="find_books_onlne">FIND BOOKS ONLNE</string>
     <string name="find_books_online">FIND BOOKS ONLINE</string>
-    <string name="to_do">TODO</string>
+    <string name="find_books_onlne">FIND BOOKS ONLINE</string>
     <string name="create_account">Create Account</string>
     <string name="input_email">Input Email</string>
     <string name="username">Username</string>
@@ -71,5 +61,18 @@
     <string name="log_in">Log In</string>
     <string name="enter_password">Enter Password</string>
     <string name="account_settings">Account Settings</string>
+    <string name="technology">Technology</string>
+    <string name="business">Business</string>
+    <string name="animation">Animation</string>
+    <string name="health_sciences">Health Sciences</string>
+    <string name="comics">Comics</string>
+    <string name="history">History</string>
+    <string name="fiction">Fiction</string>
+    <string name="search">Search</string>
+    <string name="more">More</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="borrow_book">Borrow Book</string>
+    <string name="More">More</string>
+    <string name="bookThumbnail">book</string>
 
 </resources>

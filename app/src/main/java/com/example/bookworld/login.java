@@ -19,8 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
 
@@ -29,7 +32,7 @@ public class login extends AppCompatActivity {
     private TextView signUpTextView, forgotPasswordTextView;
     private CheckBox showPasswordCheckBox;
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
+    private DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +40,10 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
+        dbRef = FirebaseDatabase.getInstance().getReference("users");
 
         emailEditText = findViewById(R.id.TextEmail);
-        passwordEditText = findViewById(R.id.TextPassword);
+        passwordEditText = findViewById(R.id.Password);
         loginButton = findViewById(R.id.buttonLogin);
         signUpTextView = findViewById(R.id.CreateAccount);
         forgotPasswordTextView = findViewById(R.id.ForgotPassword);
@@ -71,7 +74,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-        showPasswordCheckBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+        showPasswordCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -115,16 +118,15 @@ public class login extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull
-                                           Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(login.this, "Login successful.", Toast.LENGTH_SHORT).show();
-                            // Proceed to fetch user data from Firestore
-                            fetchUserDataFromFirestore();
+                            // Proceed to fetch user data from Firebase Realtime Database
+                            fetchUserDataFromDatabase();
                         } else {
                             // If sign in fails, display a message to the user.
-                            if (task.getException() != null) {
+                            if (task.getException() != null && task.getException() instanceof FirebaseAuthException) {
                                 String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
                                 handleAuthError(errorCode);
                             } else {
@@ -151,32 +153,30 @@ public class login extends AppCompatActivity {
         }
     }
 
-    private void fetchUserDataFromFirestore() {
+    private void fetchUserDataFromDatabase() {
         String userId = mAuth.getCurrentUser().getUid();
-        db.collection("users").document(userId)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                // User data retrieved successfully
-                                // You can access user data using document.getData() method
-                                // For example:
-                                // String username = document.getString("username");
-                                // Proceed to next activity (home activity)
-                                Intent intent = new Intent(login.this, Home.class);
-                                startActivity(intent);
-                            } else {
-                                // User data not found
-                                Toast.makeText(login.this, "User data not found.", Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            // Error fetching user data
-                            Toast.makeText(login.this, "Failed to fetch user data.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        dbRef.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // User data retrieved successfully
+                    // You can access user data using dataSnapshot.getValue() method
+                    // For example:
+                    // String username = dataSnapshot.child("username").getValue(String.class);
+                    // Proceed to next activity (home activity)
+                    Intent intent = new Intent(login.this, Home.class);
+                    startActivity(intent);
+                } else {
+                    // User data not found
+                    Toast.makeText(login.this, "User data not found.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Error fetching user data
+                Toast.makeText(login.this, "Failed to fetch user data.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

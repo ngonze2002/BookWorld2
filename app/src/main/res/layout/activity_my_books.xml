@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyBooks">
 
     <RelativeLayout
+        android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@drawable/cardview_background">
@@ -30,12 +33,12 @@
             android:drawableStart="@drawable/ic_search"
             android:drawablePadding="11dp"
             android:layout_marginStart="33dp"
-            android:layout_toStartOf="@id/logoutButton"
+            android:layout_toStartOf="@id/threeDotButton"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"/>
 
         <ImageView
-            android:id="@+id/logoutButton"
+            android:id="@+id/threeDotButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -43,603 +46,54 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/ic_dot"/>
+
     </RelativeLayout>
 
-    <!-- Currently Reading Section -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Currently Reading"
-        android:textColor="@color/warm_orange"
-        android:layout_marginStart="15dp"
-        android:textSize="18sp"
-        android:layout_marginTop="90dp"
-        android:textStyle="bold" />
-
-    <HorizontalScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="99dp">
-
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="19dp">
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
-            <!-- Book 1 -->
-            <LinearLayout
-                android:layout_width="130dp"
+
+            <TextView
+                android:id="@+id/trendingBooksTextView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:text="Trending Books"
+                android:textColor="@color/warm_orange"
+                android:textSize="20sp"
+                android:layout_below="@id/top"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"/>
 
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/mech"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="130dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewBooks"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView01"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
+                android:layout_below="@id/trendingBooksTextView"
+                android:layout_marginTop="8dp"/>
 
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="130dp"
+            <Button
+                android:id="@+id/addBookbutton"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView001"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
+                android:padding="15dp"
+                android:layout_gravity="center"
+                android:background="#FF9800"
+                android:textSize="25dp"
+                android:text="Add a Book"
+                android:textColor="@color/light_purple" />
         </LinearLayout>
-    </HorizontalScrollView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Want To Read"
-        android:textColor="@color/warm_orange"
-        android:layout_marginStart="15dp"
-        android:textSize="18sp"
-        android:layout_marginTop="280dp"
-        android:textStyle="bold" />
+    </ScrollView>
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="289dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="19dp">
-
-            <!-- Book 1 -->
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView02"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView002"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Previously Read"
-        android:textColor="@color/warm_orange"
-        android:textSize="18sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="450dp"
-        android:textStyle="bold" />
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="460dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="19dp">
-
-            <!-- Book 1 -->
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView03"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <!-- Book Image (with Placeholder) -->
-                <ImageView
-                    android:id="@+id/bookImageView003"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/computer"/> <!-- Placeholder image -->
-
-                <!-- Book Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Book Title"
-                    android:textStyle="bold"/>
-
-                <!-- Star Rating -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_star_24"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </HorizontalScrollView>
-    <!-- Add Book Button -->
-    <Button
-        android:id="@+id/addBookbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/bottomNavigation"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:background="#FF9800"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:text="Add a Book"
-        android:textColor="#FFFFFF" />
     <LinearLayout
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
@@ -650,13 +104,12 @@
         android:padding="10dp">
 
         <LinearLayout
+            android:id="@+id/homeLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/homelayout"
             android:orientation="vertical"
             android:gravity="center">
-
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -670,13 +123,12 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/myBooksLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/mybookslayout"
             android:orientation="vertical"
             android:gravity="center">
-
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -690,13 +142,12 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/searchLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/searchbutton"
             android:orientation="vertical"
             android:gravity="center">
-
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -710,15 +161,14 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/moreLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:id="@+id/morelayout"
             android:gravity="center">
-
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_more" />
             <TextView
