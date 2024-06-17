@@ -50,6 +50,9 @@
     <color name="light_indigo">#4B0082</color>
     <color name="light_slate_gray">#778899</color>
     <color name="royal_blue">#2046A8</color>
-
-
-</resources>
+    <color name="art_purple">#9C27B0</color>
+    <color name="art_blue">#3F51B5</color>
+    <color name="art_red">#E91E63</color>
+    <color name="art_yellow">#FFEB3B</color>
+    <color name="art_green">#4CAF50</color>
+    </resources>
