@@ -3,31 +3,101 @@ package com.example.bookworld;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class LendBookActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lend_book);
 
-        findViewById(R.id.btnViewBorrowedBooks).setOnClickListener(new View.OnClickListener() {
+
+        Button ViewBorrowedBooks = findViewById(R.id.btnViewBorrowedBooks);
+
+        // Initialize layouts and button
+        LinearLayout homeLayout = findViewById(R.id.homeart);
+        LinearLayout myBooksLayout = findViewById(R.id.mybooksart);
+        LinearLayout searchLayout = findViewById(R.id.searchart);
+        LinearLayout moreLayout = findViewById(R.id.moreart);
+        ImageView threeDotButton = findViewById(R.id.threeDotButton);
+        ImageView backButton = findViewById(R.id.backButton);
+        // Ensure this ID matches your XML
+
+        // Set onClick listeners
+        homeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Start View Borrowed Books Activity (to be implemented)
-                // Intent intent = new Intent(LendBookActivity.this, ViewBorrowedBooksActivity.class);
-                // startActivity(intent);
+            public void onClick(View view) {
+                Intent intent = new Intent(LendBookActivity.this, LendBookActivity.class);
+                startActivity(intent);
             }
         });
 
-        findViewById(R.id.btnLendBooks).setOnClickListener(new View.OnClickListener() {
+        myBooksLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Start Lend Books Activity (to be implemented)
-                // Intent intent = new Intent(LendBookActivity.this, LendBooksActivity.class);
-                // startActivity(intent);
+            public void onClick(View view) {
+                Intent intent = new Intent(LendBookActivity.this, MyBooks.class);
+                startActivity(intent);
             }
         });
+
+        searchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LendBookActivity.this, search_discovery.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set onClick listener for the "More" button to show pop-up window
+        // Set onClick listener for the "More" button to show pop-up window
+        moreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LendBookActivity.this, More.class);
+                startActivity(intent);
+            }
+        });
+
+        threeDotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LendBookActivity.this, three_dots.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // Set onClick listener for the back button
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // Close the current activity
+            }
+        });
+
+
+        ViewBorrowedBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LendBookActivity.this, LendBookActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
     }
 }

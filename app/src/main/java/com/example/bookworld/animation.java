@@ -8,12 +8,20 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class animation extends AppCompatActivity {
+
+    private LinearLayout remainingRows1, animationRows, animationRows2;
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +33,44 @@ public class animation extends AppCompatActivity {
         LinearLayout searchLayout = findViewById(R.id.searchbuttonA);
          ImageView moreLayout = findViewById(R.id.moreButton);
         ImageView backButton = findViewById(R.id.backButton);
+
+
+        // Initialize View All Buttons
+        Button viewAllButton01 = findViewById(R.id.view_all_button01);
+        Button viewAllButton2 = findViewById(R.id.view_all_button2);
+        Button viewAllButton1 = findViewById(R.id.view_all_button1);
+
+        // Initialize Hidden Rows
+        remainingRows1 = findViewById(R.id.remaining_rows_1);
+        animationRows = findViewById(R.id.animation_rows);
+        animationRows2 = findViewById(R.id.animation_rows_2);
+
+        // Set onClickListeners for View All Buttons
+        viewAllButton01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(remainingRows1);
+            }
+        });
+
+        viewAllButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(animationRows);
+            }
+        });
+
+        viewAllButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(animationRows2);
+            }
+        });
+
+
+
+
+
 
         // Set onClick listeners
         homeLayout.setOnClickListener(new View.OnClickListener() {
@@ -84,4 +130,14 @@ public class animation extends AppCompatActivity {
             }
         });
     }
+
+    private void toggleVisibility(LinearLayout hiddenRows) {
+        if (hiddenRows.getVisibility() == View.GONE) {
+            hiddenRows.setVisibility(View.VISIBLE);
+        } else {
+            hiddenRows.setVisibility(View.GONE);
+        }
+    }
+
+
 }

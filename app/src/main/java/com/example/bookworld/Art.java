@@ -3,29 +3,68 @@ package com.example.bookworld;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Art extends AppCompatActivity {
+
+    private LinearLayout remainingRows1;
+    private LinearLayout remainingRows01;
+    private LinearLayout animationRows;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_art);
 
-        // Initialize LinearLayouts and ImageViews
+        // Initialize LinearLayouts
         LinearLayout homeLayout = findViewById(R.id.homeart);
         LinearLayout myBooksLayout = findViewById(R.id.mybooksart);
         LinearLayout searchLayout = findViewById(R.id.searchart);
         LinearLayout moreLayout = findViewById(R.id.moreart);
         ImageView backButton = findViewById(R.id.backButton);
 
-        // Set onClick listeners
+        // Initialize View All Buttons
+        Button viewAllButton1 = findViewById(R.id.view_all_button1);
+        Button viewAllButton2 = findViewById(R.id.view_all_button2);
+        Button viewAllButton = findViewById(R.id.view_all_button);
+
+        // Initialize Hidden Rows
+        remainingRows1 = findViewById(R.id.remaining_rows_1);
+        remainingRows01 = findViewById(R.id.remaining_rows_01);
+        animationRows = findViewById(R.id.row);
+
+
+        // Set onClickListeners for View All Buttons
+        viewAllButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(remainingRows1);
+            }
+        });
+
+        viewAllButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(remainingRows01);
+            }
+        });
+
+        viewAllButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(animationRows);
+            }
+        });
+
+        // Set onClick listeners for bottom navigation buttons
         homeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +89,7 @@ public class Art extends AppCompatActivity {
             }
         });
 
+        // Set onClick listener for the "More" button to show a PopupWindow
         moreLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +102,7 @@ public class Art extends AppCompatActivity {
                         LinearLayout.LayoutParams.WRAP_CONTENT);
 
                 // Set background drawable with semi-transparent color to create overlay effect
-                Drawable background = new ColorDrawable(Color.BLACK);
+                ColorDrawable background = new ColorDrawable(Color.BLACK);
                 background.setAlpha(150); // Set alpha (transparency) level (0-255)
                 popupWindow.setBackgroundDrawable(background);
 
@@ -75,12 +115,20 @@ public class Art extends AppCompatActivity {
             }
         });
 
+        // Set onClick listener for the back button
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Art.this, search_discovery.class);
-                startActivity(intent);
+                finish(); // Close the current activity
             }
         });
+    }
+
+    private void toggleVisibility(LinearLayout hiddenRows) {
+        if (hiddenRows.getVisibility() == View.GONE) {
+            hiddenRows.setVisibility(View.VISIBLE);
+        } else {
+            hiddenRows.setVisibility(View.GONE);
+        }
     }
 }
