@@ -4,16 +4,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Non_Fiction extends AppCompatActivity {
+
+    private LinearLayout remainingRows1, remainingRows2, fantasyRemaining;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,38 @@ public class Non_Fiction extends AppCompatActivity {
         LinearLayout searchLayout = findViewById(R.id.searchnon);
         LinearLayout moreLayout = findViewById(R.id.morenon);
         ImageView backButton = findViewById(R.id.backButton);
+
+        // Initialize View All Buttons
+        Button viewAllButton = findViewById(R.id.view_all_button);
+        Button viewAllButton2 = findViewById(R.id.view_all_button2);
+        Button viewAllButton1 = findViewById(R.id.view_all_button1);
+
+        // Initialize Hidden Rows
+        remainingRows1 = findViewById(R.id.remaining_rows_1);
+        remainingRows2 = findViewById(R.id.remaining_rows_2);
+        fantasyRemaining = findViewById(R.id.fantasy_remaining);
+
+        // Set onClickListeners for View All Buttons
+        viewAllButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(fantasyRemaining);
+            }
+        });
+
+        viewAllButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(remainingRows2);
+            }
+        });
+
+        viewAllButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleVisibility(remainingRows1);
+            }
+        });
 
         // Set onClick listeners
         homeLayout.setOnClickListener(new View.OnClickListener() {
@@ -83,5 +118,13 @@ public class Non_Fiction extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void toggleVisibility(LinearLayout hiddenRows) {
+        if (hiddenRows.getVisibility() == View.GONE) {
+            hiddenRows.setVisibility(View.VISIBLE);
+        } else {
+            hiddenRows.setVisibility(View.GONE);
+        }
     }
 }

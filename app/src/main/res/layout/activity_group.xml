@@ -65,7 +65,7 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:background="@drawable/rectangle_top"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <LinearLayout
             android:id="@+id/homelayout"

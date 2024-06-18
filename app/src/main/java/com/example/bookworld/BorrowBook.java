@@ -1,9 +1,12 @@
 package com.example.bookworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +26,7 @@ public class BorrowBook extends AppCompatActivity {
 
     private EditText etSearchBook;
     private TextView tvBookList;
-    private Button btnBorrow, btnSearch;
+    private Button btnSearch;
     private RecyclerView recyclerSearchedBooks;
     private FirebaseFirestore db;
     private BookAdapter adapter;
@@ -34,8 +37,72 @@ public class BorrowBook extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_borrow_book);
 
+
+        // Initialize layouts and button
+        LinearLayout homeLayout = findViewById(R.id.homelayout);
+        LinearLayout myBooksLayout = findViewById(R.id.mybookslayout);
+        LinearLayout searchLayout = findViewById(R.id.searchbutton);
+        LinearLayout moreLayout = findViewById(R.id.morelayout);
+        ImageView threeDotButton = findViewById(R.id.threeDotButton);
+        ImageView backButton = findViewById(R.id.backButton);
+        // Ensure this ID matches your XML
+
+        // Set onClick listeners
+        homeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BorrowBook.this, BorrowBook.class);
+                startActivity(intent);
+            }
+        });
+
+        myBooksLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BorrowBook.this, MyBooks.class);
+                startActivity(intent);
+            }
+        });
+
+        searchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BorrowBook.this, search_discovery.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set onClick listener for the "More" button to show pop-up window
+        // Set onClick listener for the "More" button to show pop-up window
+        moreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BorrowBook.this, More.class);
+                startActivity(intent);
+            }
+        });
+
+        threeDotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BorrowBook.this, three_dots.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // Set onClick listener for the back button
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // Close the current activity
+            }
+        });
+
+
+
         etSearchBook = findViewById(R.id.etSearchBook);
-        btnBorrow = findViewById(R.id.btnBorrow);
+        Button btnBorrow = findViewById(R.id.btnBorrow);
         btnSearch = findViewById(R.id.btnSearch);
         recyclerSearchedBooks = findViewById(R.id.recyclerSearchedBooks);
         db = FirebaseFirestore.getInstance();

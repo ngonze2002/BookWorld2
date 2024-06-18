@@ -353,7 +353,7 @@
                             android:padding="16dp">
 
                             <ImageView
-                                android:src="@drawable/fantasy"
+                                android:src="@drawable/health"
                                 android:layout_width="110dp"
                                 android:layout_height="60dp" />
 

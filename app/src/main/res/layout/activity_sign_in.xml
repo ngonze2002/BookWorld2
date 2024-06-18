@@ -99,7 +99,7 @@
                     android:background="@drawable/cardview"
                     android:elevation="14dp"
                     android:drawableStart="@drawable/baseline_add_call_24"
-                    android:inputType="textWebEmailAddress"
+                    android:inputType="phone"
                     android:hint="@string/phone_contact"/>
 
             </LinearLayout>
