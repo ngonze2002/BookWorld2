@@ -3,6 +3,9 @@ package com.example.bookworld;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -11,6 +14,78 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+
+
+        // Initialize layouts and button
+        LinearLayout homeLayout = findViewById(R.id.homeart);
+        LinearLayout myBooksLayout = findViewById(R.id.mybooksart);
+        LinearLayout searchLayout = findViewById(R.id.searchart);
+        LinearLayout moreLayout = findViewById(R.id.moreart);
+        ImageView threeDotButton = findViewById(R.id.threeDotButton);
+        ImageView backButton = findViewById(R.id.backButton);
+        // Ensure this ID matches your XML
+
+        // Set onClick listeners
+        homeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity2.this, Home.class);
+                startActivity(intent);
+            }
+        });
+
+        myBooksLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity2.this, MyBooks.class);
+                startActivity(intent);
+            }
+        });
+
+        searchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity2.this, search_discovery.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set onClick listener for the "More" button to show pop-up window
+        // Set onClick listener for the "More" button to show pop-up window
+        moreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity2.this, More.class);
+                startActivity(intent);
+            }
+        });
+
+        threeDotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity2.this, three_dots.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // Set onClick listener for the back button
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // Close the current activity
+            }
+        });
+
+
+
+
+
+
+
+
+
 
         findViewById(R.id.btnLendBook).setOnClickListener(new View.OnClickListener() {
             @Override
