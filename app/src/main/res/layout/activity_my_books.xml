@@ -102,7 +102,7 @@
         android:padding="10dp">
 
         <LinearLayout
-            android:id="@+id/homeLayout"
+            android:id="@+id/homelayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

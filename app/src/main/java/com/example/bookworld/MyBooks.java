@@ -2,12 +2,15 @@ package com.example.bookworld;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.bookworld.bookdata.Book;
 import com.example.bookworld.bookdata.BookAdapter;
@@ -52,6 +55,52 @@ public class MyBooks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyBooks.this, AddBookActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set onClick listeners for bottom navigation
+        LinearLayout homeLayout = findViewById(R.id.homelayout);
+        LinearLayout myBooksLayout = findViewById(R.id.myBooksLayout);
+        LinearLayout searchLayout = findViewById(R.id.searchLayout);
+        LinearLayout moreLayout = findViewById(R.id.moreLayout);
+        ImageView threeDotButton = findViewById(R.id.threeDotButton);
+
+        myBooksLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Already in MyBooks activity, no action needed
+            }
+        });
+
+        homeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyBooks.this, Home.class);
+                startActivity(intent);
+            }
+
+    });
+        searchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyBooks.this, search_discovery.class);
+                startActivity(intent);
+            }
+        });
+
+        moreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyBooks.this, More.class);
+                startActivity(intent);
+            }
+        });
+
+        threeDotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyBooks.this, three_dots.class);
                 startActivity(intent);
             }
         });

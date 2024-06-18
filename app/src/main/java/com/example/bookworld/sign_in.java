@@ -91,7 +91,16 @@ public class sign_in extends AppCompatActivity {
         if (TextUtils.isEmpty(password)) {
             passwordEditText.setError("Password is required");
             isValid = false;
+        } else if (password.length() < 6) {
+            passwordEditText.setError("Password must be at least 6 characters long");
+            isValid = false;
+        } else if (!isValidPassword(password)) {
+            passwordEditText.setError("Password should be a combination of numbers and letters");
+            isValid = false;
+            // Display toast message for password requirement
+            Toast.makeText(sign_in.this, "Password should be a combination of numbers and letters", Toast.LENGTH_SHORT).show();
         }
+
         if (TextUtils.isEmpty(confirmPassword)) {
             confirmPasswordEditText.setError("Confirm password is required");
             isValid = false;
@@ -101,6 +110,26 @@ public class sign_in extends AppCompatActivity {
         }
 
         return isValid;
+    }
+
+    private boolean isValidPassword(String password) {
+        boolean hasLetter = false;
+        boolean hasDigit = false;
+
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isLetter(c)) {
+                hasLetter = true;
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+            }
+            // Early exit if both conditions are satisfied
+            if (hasLetter && hasDigit) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void signUp() {
@@ -139,7 +168,7 @@ public class sign_in extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(sign_in.this, "User details saved.", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(sign_in.this, "Failed to save user details to Firestore.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(sign_in.this, "Sign Up Failed.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -150,7 +179,7 @@ public class sign_in extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(sign_in.this, "User details saved to Realtime Database.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(sign_in.this, "Sign Up Successful.", Toast.LENGTH_SHORT).show();
                             // Redirect to home activity after saving user details
                             Intent intent = new Intent(sign_in.this, login.class);
                             startActivity(intent);
