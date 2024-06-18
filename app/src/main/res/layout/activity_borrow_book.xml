@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/top"
@@ -27,30 +28,29 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/ic_dot"/>
+
     </RelativeLayout>
 
     <EditText
+        android:layout_marginStart="8dp"
         android:id="@+id/etSearchBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search for a book"
-        android:layout_below="@id/top"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"/>
+        android:hint="Search for a book" />
 
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SEARCH"
-        android:layout_below="@id/etSearchBook"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSearchedBooks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnSearch"
+        android:layout_below="@id/trendingBooksTextView"
         android:layout_marginTop="8dp"/>
 
     <Button
@@ -58,101 +58,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="BORROW"
-        android:layout_below="@id/recyclerSearchedBooks"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
 
-    <LinearLayout
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/rectangle_top"
-        android:padding="10dp">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/homelayout"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textSize="12sp"
-                android:gravity="center" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/mybookslayout"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_books" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My Books"
-                android:textSize="12sp"
-                android:gravity="center" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/searchbutton"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_search" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Search"
-                android:textSize="12sp"
-                android:gravity="center" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/morelayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_more" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="More"
-                android:textSize="12sp"
-                android:gravity="center" />
-        </LinearLayout>
-    </LinearLayout>
-
-
-
-
-
-</RelativeLayout>
+</LinearLayout>
